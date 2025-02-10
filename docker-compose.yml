@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  discord-bot:
+    image: discord-bot:latest  # Use the locally built image
+    env_file: .env
+    deploy:
+      replicas: 1  # Ensures only one instance runs
+      placement:
+        constraints:
+          - "node.role == manager"  # Forces it to run on the manager node
+      restart_policy:
+        condition: any  # Restart if it crashes

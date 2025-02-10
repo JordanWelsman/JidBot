@@ -1,0 +1,11 @@
+# Directories
+__pycache__
+
+# Extensions
+*.json
+
+# Files
+.env
+deploy_portainer.sh
+new_script.sh
+redeploy.sh
